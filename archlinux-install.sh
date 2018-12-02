@@ -13,7 +13,7 @@
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-variables.sh --output-document=./archlinux-install-variables.sh
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-prepare.sh --output-document=./archlinux-install-prepare.sh
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-chroot.sh --output-document=./archlinux-install-chroot.sh
-# wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-locales.gen --output-document=./archlinux-install-locales.gen
+# wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-locale.gen --output-document=./archlinux-install-locale.gen
 # wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-mkinitcpio.conf --output-document=./archlinux-install-mkinitcpio.conf
 
 
@@ -47,11 +47,16 @@ mv ./archlinux-install-chroot_temp.sh ./archlinux-install-chroot.sh
 chmod +x ./archlinux-install-prepare.sh
 ./archlinux-install-prepare.sh
 
+# [i] Move required files to new system.
+mkdir /mnt/root/Archdrive
+cp ./archlinux-install-chroot.sh /mnt/root/Archdrive/archlinux-install-chroot.sh
+cp ./archlinux-install-mkinitcpio.conf /mnt/root/Archdrive/mkinitcpio_new.conf
+cp ./archlinux-install-locale.gen /mnt/root/Archdrive/locale_new.gen
+
 # [i] Execute chroot in new system.
-cp ./archlinux-install-chroot.sh /mnt/root/archlinux-install-chroot.sh
-chmod +x /mnt/root/archlinux-install-chroot.sh
-arch-chroot /mnt /root/archllinux-install-chroot.sh
-rm /mnt/root/archlinux-install-chroot.sh
+chmod +x /mnt/root/Archdrive/archlinux-install-chroot.sh
+arch-chroot /mnt /root/Archdrive/archlinux-install-chroot.sh
+rm /mnt/root/Archdrive/archlinux-install-chroot.sh
 
 
 # [>] Cleanup

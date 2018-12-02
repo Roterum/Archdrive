@@ -27,3 +27,6 @@ ZONEINFO="UTC"
 
 # [i] Vconsole keymap value.
 VCONKM="uk"
+
+# [>] LANG variable value in locale.
+LOCLANG="en_GB.UTF-8"

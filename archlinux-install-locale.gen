@@ -127,7 +127,7 @@
 #de_BE.UTF-8 UTF-8  
 #de_BE ISO-8859-1  
 #de_BE@euro ISO-8859-15  
-#de_CH.UTF-8 UTF-8  
+de_CH.UTF-8 UTF-8  
 #de_CH ISO-8859-1  
 #de_DE.UTF-8 UTF-8  
 #de_DE ISO-8859-1  
@@ -156,7 +156,7 @@
 #en_CA ISO-8859-1  
 #en_DK.UTF-8 UTF-8  
 #en_DK ISO-8859-1  
-#en_GB.UTF-8 UTF-8  
+en_GB.UTF-8 UTF-8  
 #en_GB ISO-8859-1  
 #en_HK.UTF-8 UTF-8  
 #en_HK ISO-8859-1  

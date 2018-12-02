@@ -24,3 +24,6 @@ INSTALLPKG="base base-devel"
 
 # [i] Zoneinfo directory to configure.
 ZONEINFO="UTC"
+
+# [i] Vconsole keymap value.
+VCONKM="uk"

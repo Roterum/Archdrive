@@ -19,7 +19,7 @@ parted -s $DRIVE mklabel msdos
 # [i] Create arch root partition.
 parted -s $DRIVE mkpart primary ext4 $DRIVE_ROOT_START $DRIVE_ROOT_END
 parted -s $DRIVE set 1 boot on
-mkfs.ext4 "$DRIVE"1
+mkfs.ext4 -F "$DRIVE"1
 
 # [i] Create home.
 parted -s $DRIVE mkpart primary fat32 $DRIVE_HOME_START $DRIVE_HOME_END
@@ -50,4 +50,4 @@ pacstrap /mnt base base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # [i] Execute chroot in new system.
-arch-chroot /mnt /root/pradinstall-chroot.sh
+arch-chroot /mnt /root/archllinux-install-chroot.sh

@@ -65,7 +65,7 @@ rm ./archlinux-install-mkinitcpio.conf
 rm /mnt/root/archlinux-install-chroot.sh
 
 # [i] Unmount and swapoff.
-umount /mnt/home
+umount /mnt/drive
 umount /mnt
 swapoff "$DRIVE"3
 

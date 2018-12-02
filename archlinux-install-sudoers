@@ -70,11 +70,6 @@
 # Defaults!REBOOT !log_output
 
 ##
-## Runas alias specification
-##
-ALL ALL=NOPASSWD: /drive/mount.sh
-
-##
 ## User privilege specification
 ##
 root ALL=(ALL) ALL
@@ -92,6 +87,11 @@ root ALL=(ALL) ALL
 ## of the user they are running the command as (root by default).
 # Defaults targetpw  # Ask for the password of the target user
 # ALL ALL=(ALL) ALL  # WARNING: only use this together with 'Defaults targetpw'
+
+##
+## Runas alias specification
+##
+ALL ALL=NOPASSWD: /drive/mount.sh
 
 ## Read drop-in files from /etc/sudoers.d
 ## (the '#' here does not indicate a comment)

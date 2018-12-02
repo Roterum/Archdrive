@@ -47,9 +47,9 @@ cp ./archlinux-install-locale.gen /mnt/root/locale_new.gen
 chmod +x /mnt/root/archlinux-install-chroot.sh
 arch-chroot /mnt /root/archlinux-install-chroot.sh
 
-# [i] Execute package install script to create new environment.
+# [i] Deploy package installation script.
 chmod +x /mnt/root/archlinux-install-packages.sh
-arch-chroot /mnt /root/archlinux-install-packages.sh
+# arch-chroot /mnt /root/archlinux-install-packages.sh
 
 
 # [>] Cleanup
@@ -61,9 +61,7 @@ rm ./archlinux-install-prepare.sh
 rm ./archlinux-install-chroot.sh
 rm ./archlinux-install-locale.gen
 rm ./archlinux-install-mkinitcpio.conf
-rm /mnt/root/archlinux-install-variables.sh
 rm /mnt/root/archlinux-install-chroot.sh
-rm /mnt/root/archlinux-install-packages.sh
 
 # [i] Unmount and swapoff.
 umount /mnt/home

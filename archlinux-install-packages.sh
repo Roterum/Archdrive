@@ -33,4 +33,12 @@ systemctl stop sshd
 mv /root/sshd_config_original /etc/ssh/sshd_config
 
 
+
+
+
+# PRFORM INSTALLS
+
+
+
+
 # [DEV] TODO: Remove git repo after installation.

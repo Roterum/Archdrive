@@ -69,4 +69,4 @@ umount /mnt
 swapoff "$DRIVE"3
 
 # [i] Reboot the system, to start new installation.
-reboot
+reboot --firmware-setup

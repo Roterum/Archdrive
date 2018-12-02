@@ -9,8 +9,8 @@ ln -sf /usr/share/zoneinfo/$ZONEINFO /etc/localtime
 hwclock --systohc
 
 # [i] Configure locale.
-mv /etc/locale.gen /root/Archdrive/locale_original.gen
-mv /root/Archdrive/locale_new.gen /etc/locale.gen
+mv /etc/locale.gen /root/locale_original.gen
+mv /root/locale_new.gen /etc/locale.gen
 locale-gen
 printf "LANG=$LOCLANG" > /etc/locale.conf
 export LANG=$LOCLANG
@@ -37,6 +37,9 @@ mkinitcpio -p linux
 pacman -Sy --noconfirm grub
 grub-install --target=i386-pc $DRIVE
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# [i] Enable dhcpcd service.
+systemctl enable dhcpcd
 
 
 # [>] User Configuration

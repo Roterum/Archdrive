@@ -31,13 +31,10 @@ clear
 systemctl stop sshd
 mv /root/sshd_config_original /etc/ssh/sshd_config
 
-
-
-
-
-# PRFORM INSTALLS
-
-
-
+for PKG in "${PACKAGES[@]}"
+do
+	chmod +x /root/Archdrive/packages/$PKG/install.sh
+	/root/Archdrive/packages/$PKG/install.sh
+done
 
 # [DEV] TODO: Remove git repo after installation.

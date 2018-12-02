@@ -15,3 +15,4 @@ pacman -Sy --noconfirm mate
 
 # [i] Configure new xinit.
 cp /root/Archdrive/packages/mate/xinitrc /home/$USERNAME/.xinitrc
+chown $USERNAME:$USERNAME /home/$USERNAME/.xinitrc

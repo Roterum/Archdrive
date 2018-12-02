@@ -11,6 +11,7 @@ useradd -m -G sudo $USERNAME
 mkdir /drive/$USERNAME
 printf $"# [i] Archdrive - Mount drive folder.\n" >> /home/$USERNAME/.bash_login
 printf $"ln -s /home/$USERNAME/Drive /drive/$USERNAME\n" >> /home/$USERNAME/.bash_login
+chown $USERNAME:$USERNAME /home/$USERNAME/.bash_login
 
 # [i] Set user password.
 echo $USERNAME:$PASSWD_USER | chpasswd

@@ -46,7 +46,7 @@ mv /etc/sudoers /root/sudoers_original
 mv /root/sudoers_new /etc/sudoers
 
 # [i] Create mount script for drive.
-printf $"ln -s /home/\$1/Drive /drive/\$1\n" > /drive/mount.sh
+printf $"ln -s /home/\$1/Drive /drive/\$1/\n" > /drive/mount.sh
 chmod +x /drive/mount.sh
 
 

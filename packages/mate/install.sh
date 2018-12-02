@@ -6,3 +6,8 @@
 
 # [i] Download X packages.
 pacman -Sy --noconfirm mate
+
+
+# [>] Setup
+
+

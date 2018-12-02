@@ -17,13 +17,12 @@ systemctl start sshd
 
 # [i] Prompt user to edit configuration.
 clear
-printf $"Edit package configuration and press [ENTER] to start installation."
-printf $"\nFollowing packages (from /root/Archdrive/packages/) will be installed:\n"
+printf $"Edit package configuration and press [ENTER] to start installation.\nFollowing packages (from /root/Archdrive/packages/) will be installed:\n"
 for PKG in "${PACKAGES[@]}"
 do
 	printf " $PKG"
 done
-printf $"\n\nSSH is available to root during the package configuration.\n The interface addresses to this machine are:\n\n"
+printf $"\n\nSSH is available to root during the package configuration.\nThe interface addresses to this machine are:\n\n"
 ip address
 read IN_NONE
 clear

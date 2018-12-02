@@ -44,8 +44,8 @@ mv ./archlinux-install-chroot_temp.sh ./archlinux-install-chroot.sh
 
 
 # [i] Start prepare script.
-./archlinux-install-prepare.sh
 chmod +x ./archlinux-install-prepare.sh
+./archlinux-install-prepare.sh
 
 # [i] Execute chroot in new system.
 cp ./archlinux-install-chroot.sh /mnt/root/archlinux-install-chroot.sh

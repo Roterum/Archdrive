@@ -12,7 +12,7 @@ git clone "git@github.com:Roterum/Archdrive" /root/Archdrive
 # [i] Install SSH and make system accessible to root.
 pacman -Sy --noconfirm openssh
 cp /etc/ssh/sshd_config /root/sshd_config_original
-printf $"\nPermitRootLogin yes\nAllowUsers root\n" >> /etc/ssh/sshd_config
+printf $"\nPermitRootLogin yes\nAllowUsers $USERNAME root\n" >> /etc/ssh/sshd_config
 systemctl start sshd
 
 # [i] Prompt user to edit configuration.

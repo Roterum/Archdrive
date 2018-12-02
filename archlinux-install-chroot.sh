@@ -37,6 +37,16 @@ pacman -Sy grub
 grub-install --target=i386-pc $DRIVE
 grub-mkconfig -o /boot/grub/grub.cfg
 
+# [i] Create new user for roterum.
+useradd -m $USERNAME
 
-printf "\n\nSet installation root password.\n\n"
+# [i] Add user to sudoers.
+printf "$USERNAME ALL=(ALL) ALL" >> /etc/sudoers
+
+# [i] Set root password.
+printf "\n\nSet new installation root password.\n\n"
 passwd
+
+# [i] Set user password.
+printf "\n\nSet new installation user password.\n\n"
+passwd $USERNAME

@@ -10,19 +10,22 @@
 
 
 # [i] Download variables, prepare, chroot, locales and mkinitcpio for archdrive installation.
-# wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-variables.sh --output-document=./archlinux-install-variables.sh
-# wget http://blah --output-document=./archlinux-install-prepare.sh
-# wget http://blah --output-document=./archlinux-install-chroot.sh
-# wget http://blah --output-document=./archlinux-install-locales.gen
-# wget http://blah --output-document=./archlinux-install-mkinitcpio.conf
+wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-variables.sh --output-document=./archlinux-install-variables.sh
+wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-prepare.sh --output-document=./archlinux-install-prepare.sh
+wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-chroot.sh --output-document=./archlinux-install-chroot.sh
+# wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-locales.gen --output-document=./archlinux-install-locales.gen
+# wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-mkinitcpio.conf --output-document=./archlinux-install-mkinitcpio.conf
 
 
 # [>] Configure
 
+
 # [i] Prompt user to edit installation variables.
+clear
 printf "Press [ENTER] to configure installation variables. After closing the document, the installation of the system will start."
 read IN_NONE
 nano ./archlinux-install-variables.sh
+clear
 
 # [i] Add configuration to prepare script.
 cat ./archlinux-install-variables.sh > ./archlinux-install-prepare_temp.sh
@@ -35,3 +38,26 @@ cat ./archlinux-install-variables.sh > ./archlinux-install-chroot_temp.sh
 printf $"\n" >> ./archlinux-install-chroot_temp.sh
 cat ./archlinux-install-chroot.sh >> ./archlinux-install-chroot_temp.sh
 mv ./archlinux-install-chroot_temp.sh ./archlinux-install-chroot.sh
+
+
+# [>] Install
+
+
+# [i] Make installation scripts executeable.
+chmox +x ./archlinux-install-prepare.sh
+chmod +x ./archlinux-install-chroot.sh
+
+# [i] Start prepare script.
+# [NOTE] The chroot script will be executed in prepare.
+./archlinux-install-prepare.sh
+
+
+# [>] Cleanup
+
+
+# [i] Remove downloaded and modifyed files.
+# rm ./archlinux-install-variables.sh
+# rm ./archlinux-install-prepare.sh
+# rm ./archlinux-install-chroot.sh
+# rm ./archlinux-install-locales.gen
+# rm ./archlinux-install-mkinitcpio.conf

@@ -1,4 +1,5 @@
 
+# [i] Disk to install archlinux on.
 DRIVE=$"/dev/sdx"
 
 # [i] Parted start and end position of root (/).
@@ -14,6 +15,15 @@ DRIVE_SWAP_START=$"\"-4GiB\""
 DRIVE_SWAP_END=$"100%"
 
 # [i] Archdrive user and hostname.
-USERSHORT="eq"
-USERNAME="pr-$USERSHORT"
-HOSTNAME="pr-archdrive-$USERSHORT"
+USERSHORT=$"eq"
+USERNAME=$"pr-$USERSHORT"
+HOSTNAME=$"pr-archdrive-$USERSHORT"
+
+# [i] Mount location of new system.
+MOUNT="$/mnt"
+
+# [i] Packages to pacstrap install.
+INSTALLPKG="base base-devel"
+
+# [i] Zoneinfo directory to configure.
+ZONEINFO="UTC"

@@ -91,7 +91,7 @@ root ALL=(ALL) ALL
 ##
 ## Runas alias specification
 ##
-ALL ALL=NOPASSWD: /drive/mount.sh
+#ALL ALL=NOPASSWD: /drive/mount.sh
 
 ## Read drop-in files from /etc/sudoers.d
 ## (the '#' here does not indicate a comment)

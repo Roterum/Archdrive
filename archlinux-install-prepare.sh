@@ -35,7 +35,7 @@ mkswap "$DRIVE"3
 # [i] Mount partitions
 mount "$DRIVE"1 /mnt
 mkdir /mnt/drive
-mount "$DRIVE"2 /mnt/drive
+mount "$DRIVE"2 /mnt/drive -o dmask=000,fmask=111
 swapon "$DRIVE"3
 
 

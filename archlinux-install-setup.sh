@@ -10,8 +10,7 @@ useradd -m -G sudo $USERNAME
 
 # [i] Create user directory on drive.
 mkdir /drive/$USERNAME
-printf $"# [i] Archdrive - Mount drive folder.\nsudo /drive/mount.sh $USERNAME" > /home/$USERNAME/.bash_profile
-chown $USERNAME:$USERNAME /home/$USERNAME/.bash_login
+ln -s /drive/$USERNAME/ /home/$USERNAME/Drive
 
 # [i] Set user password.
 echo $USERNAME:$PASSWD_USER | chpasswd

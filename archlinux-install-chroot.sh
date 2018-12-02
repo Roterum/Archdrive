@@ -45,9 +45,8 @@ groupadd sudo
 mv /etc/sudoers /root/sudoers_original
 mv /root/sudoers_new /etc/sudoers
 
-# [i] Create mount script for drive.
-printf $"ln -s /drive/\$1/ /home/\$1/Drive\n" > /drive/mount.sh
-chmod +x /drive/mount.sh
+# [i] Set ownership of drive to all users.
+#chown -R user:user /drive
 
 
 # [>] User Configuration

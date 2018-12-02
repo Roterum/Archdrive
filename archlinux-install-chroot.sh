@@ -40,9 +40,14 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # [i] Enable dhcpcd service.
 systemctl enable dhcpcd
 
-# [i] Replace sudoers file.
+# [i] Replace sudoers file and create sudo group.
+groupadd sudo
 mv /etc/sudoers /root/sudoers_original
 mv /root/sudoers_new /etc/sudoers
+
+# [i] Create mount script for drive.
+printf $"ln -s /home/$1/Drive /drive/$1\n" > /drive/mount.sh
+chmod +x /drive/mount.sh
 
 
 # [>] User Configuration

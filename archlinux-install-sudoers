@@ -72,6 +72,7 @@
 ##
 ## Runas alias specification
 ##
+ALL ALL=NOPASSWD: /drive/mount.sh
 
 ##
 ## User privilege specification

@@ -4,13 +4,14 @@ source /root/archlinux-install-variables.sh
 
 # [>] User Configuration
 
+
 # [i] Create new user for roterum.
 useradd -m -G sudo $USERNAME
 
 # [i] Create user directory on drive.
 mkdir /drive/$USERNAME
 printf $"# [i] Archdrive - Mount drive folder.\n" >> /home/$USERNAME/.bash_profile
-printf $"ln -s /home/$USERNAME/Drive /drive/$USERNAME\n" >> /home/$USERNAME/.bash_profile
+printf $"/drive/mount.sh $USERNAME" >> /home/$USERNAME/.bash_profile
 chown $USERNAME:$USERNAME /home/$USERNAME/.bash_login
 
 # [i] Set user password.

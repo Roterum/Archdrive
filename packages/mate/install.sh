@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /root/archlinux-install-variables.sh
+
 
 # [>] Install
 
@@ -11,3 +13,5 @@ pacman -Sy --noconfirm mate
 # [>] Setup
 
 
+# [i] Configure new xinit.
+cp /root/Archdrive/packages/mate/xinitrc /home/$USERNAME/.xinitrc

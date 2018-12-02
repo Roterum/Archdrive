@@ -42,6 +42,7 @@ cp ./archlinux-install-chroot.sh /mnt/root/archlinux-install-chroot.sh
 cp ./archlinux-install-packages.sh /mnt/root/archlinux-install-packages.sh
 cp ./archlinux-install-mkinitcpio.conf /mnt/root/mkinitcpio_new.conf
 cp ./archlinux-install-locale.gen /mnt/root/locale_new.gen
+cp ./archlinux-install-sudoers /mnt/root/sudoers_new
 
 # [i] Execute chroot in new system.
 chmod +x /mnt/root/archlinux-install-chroot.sh

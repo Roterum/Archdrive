@@ -8,6 +8,8 @@ Uncommented locale: `en_GB.UTF-8 UTF-8` `de_CH.UTF-8 UTF-8`
 
 Changed mkinitcpio: added `block` after `udev` in hooks array
 
+NOTE: All users of the group `sudo` are super users.
+
 
 To install the environment, start `/root/archlinux-install-packages.sh` after booting into the new system. This will also clean up the previous installation files.
 

@@ -11,7 +11,7 @@ pacman -Sy --noconfirm xorg-server xorg-xinit
 # [>] Setup
 
 
-# [i] Overwrite global xinitserverrc.
+# [i] Configure global xinit.
 
-printf $"#!/bin/sh" > /etc/X11/xinit/xserverrc
-printf $"exec /usr/bin/Xorg -nolisten tcp "\$\@" vt\$XDG_VTNR" > /etc/X11/xinit/xserverrc
+cp /root/Archdrive/packages/xorg/xinitrc /etc/X11/xinit/xinitrc
+cp /root/Archdrive/packages/xorg/xserverrc /etc/X11/xinit/xserverrc

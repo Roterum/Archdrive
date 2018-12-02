@@ -40,6 +40,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # [i] Enable dhcpcd service.
 systemctl enable dhcpcd
 
+# [i] Replace sudoers file.
+mv /etc/sudoers /root/sudoers_original
+mv /root.sudoers_new /etc/sudoers
+
 
 # [>] User Configuration
 
@@ -48,7 +52,7 @@ systemctl enable dhcpcd
 useradd -m $USERNAME
 
 # [i] Add user to sudoers.
-printf "$USERNAME ALL=(ALL) ALL" >> /etc/sudoers
+gpasswd -a $USERNAME sudo
 
 # [i] Set root password.
 echo root:$PASSWD_ROOT | chpasswd

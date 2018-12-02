@@ -41,4 +41,7 @@ PASSWD_ROOT=""
 PASSWD_USER=""
 
 # [i] Packages to install after archlinux installation. This executes the ./install.sh in the packages directory.
-declare -a PACKAGES=()
+declare -a PACKAGES=(
+	"xorg"
+	"mate"
+)

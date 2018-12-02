@@ -27,17 +27,8 @@ read IN_NONE
 nano ./archlinux-install-variables.sh
 clear
 
-# [i] Add configuration to prepare script.
-cat ./archlinux-install-variables.sh > ./archlinux-install-prepare_temp.sh
-printf $"\n" >> ./archlinux-install-prepare_temp.sh
-cat ./archlinux-install-prepare.sh >> ./archlinux-install-prepare_temp.sh
-mv ./archlinux-install-prepare_temp.sh ./archlinux-install-prepare.sh
-
-# [i] Add configuration to chroot script.
-cat ./archlinux-install-variables.sh > ./archlinux-install-chroot_temp.sh
-printf $"\n" >> ./archlinux-install-chroot_temp.sh
-cat ./archlinux-install-chroot.sh >> ./archlinux-install-chroot_temp.sh
-mv ./archlinux-install-chroot_temp.sh ./archlinux-install-chroot.sh
+# [i] Import variables.
+source ./archlinux-install-variables.sh
 
 
 # [>] Install
@@ -49,6 +40,7 @@ chmod +x ./archlinux-install-prepare.sh
 
 # [i] Move required files to new system.
 mkdir /mnt/root/Archdrive
+cp ./archlinux-install-variables.sh /mnt/root/Archdrive/archlinux-install-variables.sh
 cp ./archlinux-install-chroot.sh /mnt/root/Archdrive/archlinux-install-chroot.sh
 cp ./archlinux-install-mkinitcpio.conf /mnt/root/Archdrive/mkinitcpio_new.conf
 cp ./archlinux-install-locale.gen /mnt/root/Archdrive/locale_new.gen
@@ -63,8 +55,17 @@ rm /mnt/root/Archdrive/archlinux-install-chroot.sh
 
 
 # [i] Remove downloaded and modified files.
-# rm ./archlinux-install-variables.sh
-# rm ./archlinux-install-prepare.sh
-# rm ./archlinux-install-chroot.sh
-# rm ./archlinux-install-locales.gen
-# rm ./archlinux-install-mkinitcpio.conf
+rm ./archlinux-install-variables.sh
+rm ./archlinux-install-prepare.sh
+rm ./archlinux-install-chroot.sh
+rm ./archlinux-install-locales.gen
+rm ./archlinux-install-mkinitcpio.conf
+rm /mnt/root/Archdrive/archlinux-install-variables.sh
+rm /mnt/root/Archdrive/archlinux-install-chroot.sh
+rm /mnt/root/Archdrive/mkinitcpio_new.conf
+rm /mnt/root/Archdrive/locale_new.gen
+
+# [i] Unmount and swapoff.
+umount /mnt/home
+umount /mnt
+swapoff "$DRIVE"3

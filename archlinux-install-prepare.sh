@@ -1,3 +1,6 @@
+#!/bin/bash
+
+source ./archlinux-install-variables.sh
 
 
 # [>] Prepare

@@ -1,4 +1,5 @@
-
+#!/bin/bash
+source /root/Archdrive/archlinux-install-variables.sh
 
 # [>] Configuration
 
@@ -33,9 +34,13 @@ mv /root/Archdrive/mkinitcpio_new.conf /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # [i] Install GRUB2.
-pacman -Sy grub
+pacman -Sy --noconfirm grub
 grub-install --target=i386-pc $DRIVE
 grub-mkconfig -o /boot/grub/grub.cfg
+
+
+# [>] User Configuration
+
 
 # [i] Create new user for roterum.
 useradd -m $USERNAME
@@ -44,9 +49,7 @@ useradd -m $USERNAME
 printf "$USERNAME ALL=(ALL) ALL" >> /etc/sudoers
 
 # [i] Set root password.
-printf "\n\nSet new installation root password.\n\n"
-passwd
+echo root:$PASSWD_ROOT | chpasswd
 
 # [i] Set user password.
-printf "\n\nSet new installation user password.\n\n"
-passwd $USERNAME
+echo $USERNAME:$PASSWD_USER | chpasswd

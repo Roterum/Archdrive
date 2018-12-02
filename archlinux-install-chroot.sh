@@ -30,7 +30,7 @@ printf "127.0.0.1\t$HOSTNAME\n" >> /etc/hosts
 
 # [i] Configure mkinitcpio.
 mv /etc/mkinitcpio.conf /root/mkinitcpio_original.conf
-mv /root/Archdrive/mkinitcpio_new.conf /etc/mkinitcpio.conf
+mv /root/mkinitcpio_new.conf /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # [i] Install GRUB2.

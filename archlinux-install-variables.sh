@@ -19,9 +19,6 @@ USERSHORT=$"eq"
 USERNAME=$"pr-$USERSHORT"
 HOSTNAME=$"pr-archdrive-$USERSHORT"
 
-# [i] Mount location of new system.
-MOUNT="$/mnt"
-
 # [i] Packages to pacstrap install.
 INSTALLPKG="base base-devel"
 

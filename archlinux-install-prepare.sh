@@ -31,7 +31,7 @@ mkswap "$DRIVE"3
 
 # [i] Mount partitions
 mount "$DRIVE"1 /mnt
-mkdir $MOUNT/home
+mkdir /mnt/home
 mount "$DRIVE"2 /mnt/home
 swapon "$DRIVE"3
 
@@ -40,14 +40,14 @@ swapon "$DRIVE"3
 
 
 # [i] Install base and base-devel.
-pacstrap $MOUNT base base-devel
+pacstrap /mnt base base-devel
 
 
 # [>] Configure
 
 
 # [i] Generate fstab.
-genfstab -U $MOUNT >> $MOUNT/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 
 # [i] Execute chroot in new system.
 arch-chroot /mnt /root/pradinstall-chroot.sh

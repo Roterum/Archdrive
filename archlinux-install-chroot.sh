@@ -34,7 +34,6 @@ mv /root/mkinitcpio_new.conf /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # [i] Install GRUB2.
-pacman -Sy --noconfirm grub
 grub-install --target=i386-pc $DRIVE
 grub-mkconfig -o /boot/grub/grub.cfg
 

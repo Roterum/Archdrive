@@ -5,12 +5,10 @@ source /root/archlinux-install-variables.sh
 # [>] Preparation
 
 
-# [i] Install git and clone Archdrive repo for packages source.
-pacman -Sy --noconfirm git
-git clone "git@github.com:Roterum/Archdrive" /root/Archdrive
+# [i] Clone Archdrive repo for packages source.
+git clone "https://github.com/Roterum/Archdrive.git" /root/Archdrive
 
-# [i] Install SSH and make system accessible to root.
-pacman -Sy --noconfirm openssh
+# [i] Make system accessible to root over SSH.
 cp /etc/ssh/sshd_config /root/sshd_config_original
 printf $"\nPermitRootLogin yes\nAllowUsers $USERNAME root\n" >> /etc/ssh/sshd_config
 systemctl start sshd

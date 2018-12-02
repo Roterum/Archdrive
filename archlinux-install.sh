@@ -13,8 +13,8 @@
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-variables.sh --output-document=./archlinux-install-variables.sh
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-prepare.sh --output-document=./archlinux-install-prepare.sh
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-chroot.sh --output-document=./archlinux-install-chroot.sh
-# wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-locale.gen --output-document=./archlinux-install-locale.gen
-# wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-mkinitcpio.conf --output-document=./archlinux-install-mkinitcpio.conf
+wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-locale.gen --output-document=./archlinux-install-locale.gen
+wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-mkinitcpio.conf --output-document=./archlinux-install-mkinitcpio.conf
 
 
 # [>] Configure

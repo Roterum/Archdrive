@@ -21,11 +21,8 @@ wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-instal
 
 
 # [i] Prompt user to edit installation variables.
-clear
-printf "Press [ENTER] to configure installation variables. After closing the document, the installation of the system will start."
 read IN_NONE
 nano ./archlinux-install-variables.sh
-clear
 
 # [i] Import variables.
 source ./archlinux-install-variables.sh

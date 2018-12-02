@@ -67,3 +67,6 @@ rm /mnt/root/archlinux-install-chroot.sh
 umount /mnt/home
 umount /mnt
 swapoff "$DRIVE"3
+
+# [i] Reboot the system, to start new installation.
+reboot

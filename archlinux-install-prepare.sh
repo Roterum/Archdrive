@@ -34,8 +34,8 @@ mkswap "$DRIVE"3
 
 # [i] Mount partitions
 mount "$DRIVE"1 /mnt
-mkdir /mnt/home
-mount "$DRIVE"2 /mnt/home
+mkdir /mnt/drive
+mount "$DRIVE"2 /mnt/drive
 swapon "$DRIVE"3
 
 

@@ -42,7 +42,7 @@ systemctl enable dhcpcd
 
 # [i] Replace sudoers file.
 mv /etc/sudoers /root/sudoers_original
-mv /root.sudoers_new /etc/sudoers
+mv /root/sudoers_new /etc/sudoers
 
 
 # [>] User Configuration

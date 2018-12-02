@@ -44,7 +44,7 @@ mv ./archlinux-install-chroot_temp.sh ./archlinux-install-chroot.sh
 
 
 # [i] Make installation scripts executeable.
-chmox +x ./archlinux-install-prepare.sh
+chmod +x ./archlinux-install-prepare.sh
 chmod +x ./archlinux-install-chroot.sh
 
 # [i] Start prepare script.

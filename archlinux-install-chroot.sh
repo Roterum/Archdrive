@@ -1,5 +1,5 @@
 #!/bin/bash
-source /root/Archdrive/archlinux-install-variables.sh
+source /root/archlinux-install-variables.sh
 
 # [>] Configuration
 
@@ -29,7 +29,7 @@ printf "::1\tlocalhost\n" >> /etc/hosts
 printf "127.0.0.1\t$HOSTNAME\n" >> /etc/hosts
 
 # [i] Configure mkinitcpio.
-mv /etc/mkinitcpio.conf /root/Archdrive/mkinitcpio_original.conf
+mv /etc/mkinitcpio.conf /root/mkinitcpio_original.conf
 mv /root/Archdrive/mkinitcpio_new.conf /etc/mkinitcpio.conf
 mkinitcpio -p linux
 

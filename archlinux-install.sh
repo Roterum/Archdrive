@@ -15,6 +15,7 @@ wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-instal
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-chroot.sh --output-document=./archlinux-install-chroot.sh
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-locale.gen --output-document=./archlinux-install-locale.gen
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-mkinitcpio.conf --output-document=./archlinux-install-mkinitcpio.conf
+wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-packages.sh --output-document=./archlinux-install-packages.sh
 
 
 # [>] Configure
@@ -37,15 +38,19 @@ chmod +x ./archlinux-install-prepare.sh
 
 # [i] Move required files to new system.
 mkdir /mnt/root/Archdrive
-cp ./archlinux-install-variables.sh /mnt/root/Archdrive/archlinux-install-variables.sh
-cp ./archlinux-install-chroot.sh /mnt/root/Archdrive/archlinux-install-chroot.sh
-cp ./archlinux-install-mkinitcpio.conf /mnt/root/Archdrive/mkinitcpio_new.conf
-cp ./archlinux-install-locale.gen /mnt/root/Archdrive/locale_new.gen
+cp ./archlinux-install-variables.sh /mnt/root/archlinux-install-variables.sh
+cp ./archlinux-install-chroot.sh /mnt/root/archlinux-install-chroot.sh
+cp ./archlinux-install-packages.sh /mnt/root/archlinux-install-packages.sh
+cp ./archlinux-install-mkinitcpio.conf /mnt/root/mkinitcpio_new.conf
+cp ./archlinux-install-locale.gen /mnt/root/locale_new.gen
 
 # [i] Execute chroot in new system.
-chmod +x /mnt/root/Archdrive/archlinux-install-chroot.sh
-arch-chroot /mnt /root/Archdrive/archlinux-install-chroot.sh
-rm /mnt/root/Archdrive/archlinux-install-chroot.sh
+chmod +x /mnt/root/archlinux-install-chroot.sh
+arch-chroot /mnt /root/archlinux-install-chroot.sh
+
+# [i] Execute package install script to create new environment.
+chmod +x /mnt/root/archlinux-install-packages.sh
+arch-chroot /mnt /root/archlinux-install-packages.sh
 
 
 # [>] Cleanup
@@ -55,12 +60,11 @@ rm /mnt/root/Archdrive/archlinux-install-chroot.sh
 rm ./archlinux-install-variables.sh
 rm ./archlinux-install-prepare.sh
 rm ./archlinux-install-chroot.sh
-rm ./archlinux-install-locales.gen
+rm ./archlinux-install-locale.gen
 rm ./archlinux-install-mkinitcpio.conf
-rm /mnt/root/Archdrive/archlinux-install-variables.sh
-rm /mnt/root/Archdrive/archlinux-install-chroot.sh
-rm /mnt/root/Archdrive/mkinitcpio_new.conf
-rm /mnt/root/Archdrive/locale_new.gen
+rm /mnt/root/archlinux-install-variables.sh
+rm /mnt/root/archlinux-install-chroot.sh
+rm /mnt/root/archlinux-install-packages.sh
 
 # [i] Unmount and swapoff.
 umount /mnt/home

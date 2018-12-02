@@ -19,7 +19,7 @@ DRIVE_HOME_END=$"\"-4GiB\""
 DRIVE_SWAP_START=$"\"-4GiB\""
 DRIVE_SWAP_END=$"100%"
 
-# [i] Archdrive user and hostname.
+# [i] Archdrive system user and hostname.
 USERSHORT=$"eq"
 USERNAME=$"roterum-$USERSHORT"
 HOSTNAME=$"pr-archdrive-$USERSHORT"
@@ -39,3 +39,6 @@ LOCLANG="en_GB.UTF-8"
 # [i] Password for user and root.
 PASSWD_ROOT=""
 PASSWD_USER=""
+
+# [i] Packages to install after archlinux installation. This executes the ./install.sh in the packages directory.
+declare -a PACKAGES=()

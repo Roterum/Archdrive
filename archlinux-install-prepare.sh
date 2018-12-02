@@ -43,7 +43,7 @@ swapon "$DRIVE"3
 
 
 # [i] Install base and base-devel.
-pacstrap /mnt base base-devel grub openssh wget git
+pacstrap /mnt $INSTALLPKG
 
 
 # [>] Configure

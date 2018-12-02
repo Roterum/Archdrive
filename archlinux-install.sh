@@ -15,6 +15,7 @@ wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-instal
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-chroot.sh --output-document=./archlinux-install-chroot.sh
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-locale.gen --output-document=./archlinux-install-locale.gen
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-mkinitcpio.conf --output-document=./archlinux-install-mkinitcpio.conf
+wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-setup.sh --output-document=./archlinux-install-setup.sh
 wget https://raw.githubusercontent.com/Roterum/Archdrive/master/archlinux-install-packages.sh --output-document=./archlinux-install-packages.sh
 
 
@@ -36,21 +37,19 @@ chmod +x ./archlinux-install-prepare.sh
 ./archlinux-install-prepare.sh
 
 # [i] Move required files to new system.
-mkdir /mnt/root/Archdrive
 cp ./archlinux-install-variables.sh /mnt/root/archlinux-install-variables.sh
 cp ./archlinux-install-chroot.sh /mnt/root/archlinux-install-chroot.sh
+chmod +x /mnt/root/archlinux-install-chroot.sh
 cp ./archlinux-install-packages.sh /mnt/root/archlinux-install-packages.sh
+chmod +x /mnt/root/archlinux-install-packages.sh
+cp ./archlinux-install-setup.sh /mnt/root/archlinux-install-setup.sh
+chmod +x /mnt/root/archlinux-install-setup.sh
 cp ./archlinux-install-mkinitcpio.conf /mnt/root/mkinitcpio_new.conf
 cp ./archlinux-install-locale.gen /mnt/root/locale_new.gen
 cp ./archlinux-install-sudoers /mnt/root/sudoers_new
 
 # [i] Execute chroot in new system.
-chmod +x /mnt/root/archlinux-install-chroot.sh
 arch-chroot /mnt /root/archlinux-install-chroot.sh
-
-# [i] Deploy package installation script.
-chmod +x /mnt/root/archlinux-install-packages.sh
-# arch-chroot /mnt /root/archlinux-install-packages.sh
 
 
 # [>] Cleanup

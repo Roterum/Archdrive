@@ -48,14 +48,5 @@ mv /root.sudoers_new /etc/sudoers
 # [>] User Configuration
 
 
-# [i] Create new user for roterum.
-useradd -m $USERNAME
-
-# [i] Add user to sudoers.
-gpasswd -a $USERNAME sudo
-
 # [i] Set root password.
 echo root:$PASSWD_ROOT | chpasswd
-
-# [i] Set user password.
-echo $USERNAME:$PASSWD_USER | chpasswd

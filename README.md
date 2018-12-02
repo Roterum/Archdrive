@@ -11,7 +11,7 @@ Changed mkinitcpio: added `block` after `udev` in hooks array
 NOTE: All users of the group `sudo` are super users.
 
 
-To install the environment, start `/root/archlinux-install-packages.sh` after booting into the new system. This will also clean up the previous installation files.
+After rebooting the system, run `/root/archlinux-install-setup.sh` to finish the installation and install additional packages. This will also clean up the installation files.
 
 NOTE: During package configuration, the system is accessible over ssh to root.
 

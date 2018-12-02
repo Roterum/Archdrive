@@ -25,7 +25,7 @@ USERNAME=$"roterum-$USERSHORT"
 HOSTNAME=$"pr-archdrive-$USERSHORT"
 
 # [i] Packages to pacstrap install.
-INSTALLPKG="base base-devel"
+INSTALLPKG="base base-devel grub openssh wget git"
 
 # [i] Zoneinfo directory to configure.
 ZONEINFO="UTC"

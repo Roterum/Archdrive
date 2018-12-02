@@ -43,19 +43,21 @@ mv ./archlinux-install-chroot_temp.sh ./archlinux-install-chroot.sh
 # [>] Install
 
 
-# [i] Make installation scripts executeable.
-chmod +x ./archlinux-install-prepare.sh
-chmod +x ./archlinux-install-chroot.sh
-
 # [i] Start prepare script.
-# [NOTE] The chroot script will be executed in prepare.
 ./archlinux-install-prepare.sh
+chmod +x ./archlinux-install-prepare.sh
+
+# [i] Execute chroot in new system.
+cp ./archlinux-install-chroot.sh /mnt/root/archlinux-install-chroot.sh
+chmod +x /mnt/root/archlinux-install-chroot.sh
+arch-chroot /mnt /root/archllinux-install-chroot.sh
+rm /mnt/root/archlinux-install-chroot.sh
 
 
 # [>] Cleanup
 
 
-# [i] Remove downloaded and modifyed files.
+# [i] Remove downloaded and modified files.
 # rm ./archlinux-install-variables.sh
 # rm ./archlinux-install-prepare.sh
 # rm ./archlinux-install-chroot.sh

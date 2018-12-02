@@ -48,6 +48,3 @@ pacstrap /mnt base base-devel
 
 # [i] Generate fstab.
 genfstab -U /mnt >> /mnt/etc/fstab
-
-# [i] Execute chroot in new system.
-arch-chroot /mnt /root/archllinux-install-chroot.sh
